@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { songs } from './Songs';
 import './Player.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faBackwardStep, faForwardStep, faPause, faShuffle, faRepeat, faArrowRight, faCircleStop } from "@fortawesome/free-solid-svg-icons";
 
 const Player: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
@@ -111,32 +113,47 @@ const Player: React.FC = () => {
     }
     playSong(nextIndex);
   };
+  const prevTrack = () => {
+    let nextIndex = currentSong - 1;
+    if (shuffle) {
+      nextIndex = Math.floor(Math.random() * songs.length);
+    } else if (nextIndex >= songs.length) {
+      nextIndex = repeat ? 0 : songs.length + 1;
+    }
+    playSong(nextIndex);
+  };
 
   return (
     <div className="wholePlayer">
+      <div className="interface">
       <p className="playerTitle">Music Player</p>
       <img src={songs[currentSong].cover} alt={songs[currentSong].title} className="coverImg"/>
       <audio ref={audioRef} />
+      <div className="playerSliders">
+        <input type="range" min={0} max={songLength} step={0.1} value={currentStamp} onChange={handleSearch} className="songBar" />
+      </div>
+      <p className="songInfo">Now Playing: {songs[currentSong].title}</p>
       <div className="playerButtons">
-        <p className="songInfo">Now Playing: {songs[currentSong].title}</p>
+        <button onClick={prevTrack} disabled={loading} className="nextButton"><FontAwesomeIcon icon={faBackwardStep} /></button>
         <button onClick={togglePlay} className="playButton">
-          {isPlaying ? 'Pause' : 'Play'}
+          {isPlaying ? <FontAwesomeIcon icon={faPause} /> : <FontAwesomeIcon icon={faPlay} />}
         </button>
-        <button onClick={nextTrack} disabled={loading} className="nextButton">Next</button>
+        <button onClick={nextTrack} disabled={loading} className="nextButton"><FontAwesomeIcon icon={faForwardStep} /></button>
+        
         <button onClick={() => setShuffle(!shuffle)}>
-          {shuffle ? 'Shuffle On' : 'Shuffle Off'}
+          {shuffle ? <FontAwesomeIcon icon={faShuffle} /> : <FontAwesomeIcon icon={faCircleStop} />}
         </button>
         <button onClick={() => setRepeat(!repeat)} className="loopButton">
-          {repeat ? 'Repeat On' : 'Repeat Off'}
+          {repeat ? <FontAwesomeIcon icon={faRepeat} /> : <FontAwesomeIcon icon={faArrowRight} />}
         </button>
       </div>
       <div className="playerSliders">
         <input type="range" min={0} max={1} step={0.01} value={volume} onChange={handleVolume} />
-        <input type="range" min={0} max={songLength} step={0.1} value={currentStamp} onChange={handleSearch} />
+      </div>
       </div>
       <div className="playList">
         {songs.map((song, index) => (
-          <div key={index}>
+          <div key={index} className="songOrder">
             <span>{song.title}</span>
             <button onClick={() => playSong(index)} disabled={loading}>Play</button>
           </div>

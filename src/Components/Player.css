@@ -10,15 +10,46 @@
   font-family: 'KingdomHearts', sans-serif;
 }
 body {
-  background-image: url(symbolsbg.webp);
+ background-image: url(symbolsbg.webp);
 }
 img {
-  width: 300px;
+  width: 250px;
   height: auto;
 }
 .wholePlayer {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 70px auto;
+  border: 2px solid blue;
+  background: linear-gradient(to bottom, blue, black);
+  border-radius: 20px;
+  width: 1000px;
+}
+.playerButtons {
+  background-color: aqua;
+}
+.playerSliders {
+  background-color: blueviolet;
+}
+.playList {
+  background-color: chartreuse;
+  height: 300px; /* Set the desired height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  border: 1px solid #ccc; /* Optional: add a border for visibility */
+  width: 400px;
+}
+.interface {
+  background-color: turquoise;
+  width: 500px;
+}
+.coverImg, .playerSliders, .playerButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: auto;
+}
+.songBar {
+  width: 80%;
+  accent-color: black;
 }
