@@ -21,27 +21,21 @@ img {
   align-items: center;
   justify-content: center;
   margin: 70px auto;
-  border: 2px solid blue;
-  background: linear-gradient(to bottom, blue, black);
+  border: 2px solid #000ad1;
+  background: linear-gradient(to bottom, #00011d, black);
   border-radius: 20px;
   width: 1000px;
 }
-.playerButtons {
-  background-color: aqua;
-}
-.playerSliders {
-  background-color: blueviolet;
-}
 .playList {
-  background-color: chartreuse;
-  height: 300px; /* Set the desired height */
+  height: 400px; /* Set the desired height */
   overflow-y: auto; /* Enable vertical scrolling */
-  border: 1px solid #ccc; /* Optional: add a border for visibility */
   width: 400px;
+  margin-left: 20px;
+  color: white;
 }
 .interface {
-  background-color: turquoise;
   width: 500px;
+  height: 450px;
 }
 .coverImg, .playerSliders, .playerButtons {
   display: flex;
@@ -49,7 +43,52 @@ img {
   justify-content: center;
   margin: auto;
 }
+.coverImg {
+  border: 2px solid #000ad1;
+  border-radius: 5px;
+  padding: 10px;
+}
 .songBar {
   width: 80%;
-  accent-color: black;
+  accent-color: #000131;
+  outline: none;
+}
+.volumeBar {
+  width: 70%;
+  accent-color: #000131;
+}
+.playerSliders {
+  color: white;
+}
+.songInfo{
+  font-size: 18px;
+  color: white;
+}
+.playerButtons {
+  gap: 20px;
+}
+.playerButtons button {
+  border-top: 2px solid #3e4b80;
+  border-left: 2px solid #3e4b80;
+  border-right: 2px solid#000030;
+  border-bottom: 2px solid#000030;
+  border-radius: 10px;
+  padding: 5px 20px;
+  background-color: #000666;
+  color: white;
+}
+.listButton {
+  border-top: 2px solid #3e4b80;
+  border-left: 2px solid #3e4b80;
+  border-right: 2px solid#000030;
+  border-bottom: 2px solid#000030;
+  border-radius: 10px;
+  padding: 2px 10px;
+  background-color: #000666;
+  color: white;
+}
+.songOrder {
+  display: flex;
+  align-items:flex-end;
+  justify-items: flex-end;
 }
