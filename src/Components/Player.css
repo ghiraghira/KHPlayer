@@ -44,8 +44,8 @@ img {
   width: 1000px;
 }
 .playList {
-  height: 400px; /* Set the desired height */
-  overflow-y: auto; /* Enable vertical scrolling */
+  height: 400px; 
+  overflow-y: auto;
   width: 400px;
   margin-left: 20px;
   color: white;
