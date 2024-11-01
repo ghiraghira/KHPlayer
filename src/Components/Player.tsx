@@ -154,7 +154,7 @@ const Player: React.FC = () => {
       <div className="playList">
         {songs.map((song, index) => (
           <div key={index} className="songOrder">
-            <span>{song.title}</span>
+            <span className="songNames">{song.title}</span>
             <button onClick={() => playSong(index)} disabled={loading} className="listButton">Play</button>
           </div>
         ))}
