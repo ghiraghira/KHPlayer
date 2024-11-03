@@ -27,7 +27,7 @@ export const songs = [
   { title: 'Sinister Sundown', src: './Assets/khsongs/4-05 Sinister Sundown.mp3', cover: './Assets/khpics/kh2fm-twilight.jpg' },
   { title: 'Tension Rising', src: './Assets/khsongs/4-09 Tension Rising.mp3', cover: './Assets/khpics/kh2fm-sora-roxas-station-tower.jpg' },
   { title: 'The 13th Struggle', src: './Assets/khsongs/4-12 The 13th Struggle.mp3', cover: './Assets/khpics/coded-box-art.jpg' },
-  { title: 'Rowdy Rumble', src: './Assets/khsongs/5-22 Rowdy Rumble.mp3', cover: './Assets/khpics/bbs-e3-promotional-art.jpg' },
+  { title: 'The Rustling Forest', src: './Assets/khsongs/1-22 The Rustling Forest.mp3', cover: './Assets/khpics/bbs-e3-promotional-art.jpg' },
   { title: 'Castle Escapade', src: './Assets/khsongs/1-15 Castle Escapade.mp3', cover: './Assets/khpics/bbs-castle-of-dreams-forest.jpg' },
   { title: 'Sinister Shadows', src: './Assets/khsongs/6-29 Sinister Shadows.mp3', cover: './Assets/khpics/kh2-box-art.jpg' },
 ];
